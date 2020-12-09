@@ -1,4 +1,4 @@
-const CLIMA = prompt("Ingrese como esta el clima: ");
+const CLIMA = prompt("Ingrese como esta el clima: \na)soleado\nb)lluvioso\nc)nevando\nd)nublado");
 if (CLIMA == "soleado") {
     console.log("El clima esta soleado por aqui");
 } else if(CLIMA == "lluvioso") {
