@@ -1,5 +1,5 @@
 
 const PESO_KODER = prompt("¿Cuál es tu peso en kg?");
 let peso_luna = (PESO_KODER/9.81) * 1.622;
-let mensaje = "tu peso en la luna es: " + peso_luna;
+let mensaje = "tu peso en la luna es: " + peso_luna + " kg.";
 alert(mensaje);
