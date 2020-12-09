@@ -26,6 +26,6 @@ switch(CLIMA) {
     console.log("El clima esta nublado por aqui");
     break;
     default:
-    let mensaje = prompt("ingresa la descripcion de tu dia: ");
-    console.log(mensaje);
+        let mensaje = prompt("ingresa la descripcion de tu dia: ");
+        console.log(mensaje);
 };
