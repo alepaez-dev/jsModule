@@ -85,10 +85,19 @@ switch(number) {
     case 2: 
         console.log("Tiene 28 dias y en año bisiesto tiene 29 dias");
         break;
-    case 1,3,5,7,8,10,12: 
+    case 1:
+    case 3: 
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12: 
         console.log("Tiene 30 dias");
         break;
-    case 4,6,9,11: 
+    case 4:
+    case 6:
+    case 9:
+    case 11: 
         console.log("Tiene 31 dias");
         break;
 };
