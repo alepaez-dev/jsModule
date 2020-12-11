@@ -34,7 +34,6 @@ for (i = 0; i < str.length; i ++) {
        };
    };
 };
-
 console.log(`hay ${count} cantidad de vocales en el string "${str}"`);
 
 
