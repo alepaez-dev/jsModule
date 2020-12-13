@@ -9,17 +9,18 @@ function tablas(str = "987") {
         };
     };
 };
-tablas("321");
+// tablas("321");
 
-function palindromo(str = "emme") {
+function palindromo(str = "anita lava la tina") {
+    let str_nuevo = str.replace(/ /g,''); //con split y join tmb funciona
     let reverse_string = "";
-    for(let i = str.length -1; i >= 0; i --){
-        reverse_string += str[i];
+    for(let i = str_nuevo.length - 1; i >= 0; i --){
+        reverse_string += str_nuevo[i];
     };
     console.log(reverse_string);
-    if(reverse_string === str) {
+    if(reverse_string === str_nuevo) {
         console.log("es palindromo");
-    }else {
+    } else {
         console.log("no es palindromo");
     };
 };
@@ -29,5 +30,5 @@ function dataType(data1 = "data1", data2 = 2){
     console.log("el dato 1 es un tipo de dato: ", typeof data1);
     console.log("el dato 2 es un tipo de dato: ", typeof data2);
 };
-dataType();
+// dataType();
 
