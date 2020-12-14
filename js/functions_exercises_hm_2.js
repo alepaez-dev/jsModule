@@ -32,7 +32,6 @@ calculateDogAge(4,"Vader");
  */
 
  function temperatureConverter(grados, sistema) {
-    let resultado;
     if(sistema == "C") {
         console.log(`${grados} Celsius equivalen a ${(grados*(9/5))+32} Fahrenheit`); 
     } else {
