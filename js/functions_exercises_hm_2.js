@@ -49,19 +49,20 @@ calculateDogAge(4,"Vader");
  function getFactorial(num) {
     let result = 1;
     let multiplicacion = "";
-    if(parseInt(num) === 1) {
-        console.log(`el factorial de ${parseInt(num)}! es: ${result}`);
+    num = parseInt(num);
+    if(num === 1) {
+        console.log(`el factorial de ${num}! es: ${result}`);
     } else {
-        for(let i = 1; i <= parseInt(num); i++){
+        for(let i = 1; i <= num; i++){
             result *= i;
             //*EXTRA = para imprimir la transicion de los numeros
-            if(i < parseInt(num)) {
+            if(i < num) {
                 multiplicacion += ` ${i} *`
             } else {
                 multiplicacion += " " + i;
             };
         };
-        console.log(`el factorial de ${parseInt(num)}! = ${multiplicacion} es: ${result}`);
+        console.log(`el factorial de ${num}! = ${multiplicacion} es: ${result}`);
     };
  };
  getFactorial(5);
