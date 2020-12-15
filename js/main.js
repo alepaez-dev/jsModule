@@ -1,4 +1,4 @@
-// FUNCONES CON RETORNO
+// FUNCIONES CON RETORNO
 
 // function add(a,b) {
 //     const c = a + b;
@@ -15,10 +15,10 @@
  */
 
 function calculateDogAge(age, name = "nombre sin definir") {
-    return `${name} tiene ${age*7} años caninos`;
+    return age*7;
 };
-// let result = calculateDogAge(4, "Vader");
-console.log(calculateDogAge(4,"Vader"));
+let result = calculateDogAge(4, "Vader");
+console.log(`${result} años caninos`);
 
 /**
  * Crear una función que calcule el area y la circunferencia de un circulo
@@ -43,13 +43,13 @@ console.log(result);
 
  function temperatureConverter(grados, sistema) {
     if(sistema == "C") {
-        return `${grados} Celsius equivalen a ${(grados*(9/5))+32} Fahrenheit`;
+        return (grados*(9/5))+32;
     } else {
-        return `${grados} Fahrenheit equivalen a ${(grados -32)*(5/9)}`;
+        return (grados -32)*(5/9);
     };
  };
 result = temperatureConverter(20,"C");
-console.log(result);
+console.log(`${result} grados`);
 
 /*
  * Escribir una funcion que calcule el factorial de un número
@@ -61,13 +61,13 @@ console.log(result);
     let result = 1;
     num = parseInt(num);
     if(num === 1) {
-        return `el factorial de ${num}! es: ${result}`;
+        return result;
     } else {
         for(let i = 1; i <= num; i++){
             result *= i;
         };
-        return `el factorial de ${num}! : ${result}`;
+        return result;
     };
  };
 result = getFactorial(5);
-console.log(result);
+console.log(`el resultado es: ${result}`);
