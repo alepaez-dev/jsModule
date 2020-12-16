@@ -48,13 +48,29 @@ const getFactorial = num => {
 };
 
 const myArray = [1,4,7,10];
-for(let i = 0; i < myArray.length; i++){
-    console.log("tabla del: ", myArray[i]);
-    for(let j = 1; j <= 10; j ++){
-        console.log(`${myArray[i]} x ${j} = ${myArray[i]*j}`);
-    };
-};
- 
+// for(let i = 0; i < myArray.length; i++){
+//     console.log("tabla del: ", myArray[i]);
+//     for(let j = 1; j <= 10; j ++){
+//         console.log(`${myArray[i]} x ${j} = ${myArray[i]*j}`);
+//     };
+// };
+
+myArray.forEach(element => {
+    //const tabla = [1,2,3,4,5,6,7,8,9,10];
+    console.log("tabal del: ", element);
+        [1,2,3,4,5,6,7,8,9,10].forEach(i => {
+            console.log(`${element} x ${i} = ${element*i}`);
+        });
+});
+
+
+
+    
+    
+    // for(let j = 1; j <= 10; j++){
+    //     console.log(`${element} x ${j} = ${element*j}`);
+    // };
+//}); 
 
 
 
