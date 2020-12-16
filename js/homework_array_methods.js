@@ -63,3 +63,12 @@ const duplicateElements = array => array.filter((element,index,array) => {
 console.log(notDuplicateElements([1,1,1,2,3,4,5,2,4,1,5,2,2,2,2,7]));
 console.log(duplicateElements([1,1,1,2,3,4,5,2,4,1,5,2,2,2,2,7]));
 
+// ejercicio 7 .filter()
+//  funcion
+// dado un array de años, filtre los elementos
+// y devuelva un array con los años que son bisiesto
+// [1990, 2000, 2001, 2020]
+// -> [2000,2020]
+
+const leapYear = array => array.filter(element => element % 4 === 0);
+console.log(leapYear([1990,2000,2001,2020,2024]));
