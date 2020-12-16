@@ -43,25 +43,6 @@ const uppercaseString = array => array.map(element => {
 });
 console.log(uppercaseString(["ale","hernandez","paez", 5, "hola", "pop", 7, "7"]));
 
-// ejercicio 4 .filter()
-//  funcion
-// dado un array de números, filtre los elementos
-// y devuelva un array con los elementos que no estan duplicados
-// [1,2,4,2,5,4]
-// -> [1,5]
-
-// const notDuplicated = array => array.filter(element => {
-//     if(!(array.includes(element))){
-//         return element;
-//     };
-// });
-// console.log(notDuplicated([1,2,3,4,5,4]));
-
-// [1, 2, 2, 4, 3, 4].filter((e, i, a) => {
-
-//     a.indexOf(e) === i) // [1, 2, 3, 4]
-// })
-
 
 const duplicateElements = array => array.filter((element,index,array) => {
     first_index =  array.indexOf(element);
