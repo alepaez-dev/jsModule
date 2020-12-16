@@ -6,15 +6,16 @@
 
 const myArray = [1,4,3,2,5];
 let higher_number = -99999;
-const higherNumber = myArray => {
-    myArray.forEach(element => {
+const higherNumber = array => {
+    array.forEach(element => {
         if (element > higher_number) {
             higher_number = element;
         };
     });
-    console.log("el numero mayor es: ", higher_number);
+    // console.log("el numero mayor es: ", higher_number);
+    return higher_number;
 };
-higherNumber(myArray);
+console.log(`el numero mayor es: ${higherNumber(myArray)}`);
 
 
 // ejercicio 2 .map()
@@ -24,4 +25,21 @@ higherNumber(myArray);
 // input: [1,2,3,4,5]
 // output -> ['1,','2','3','4','5']
 
+// const convertToString = array => convertString = array.map(element => element.toString());
+const convertString = array => array.map(element => element.toString());
+console.log(convertString(myArray));
+
+// ejercicio 3 .map()
+// función
+// capitalizar todos los elementos que sean strings de un array
+// input: ['hOlA', 'mundo', 123]
+// output -> ['Hola','Mundo','123]
+
+const uppercaseString = array => array.map(element => {
+    if (typeof element === "string") {
+        element.replace(element[0],element[0].toUpperCase());
+    };
+    return element;
+});
+console.log(uppercaseString(["ale","hernandez","paez", 5, "hola", "pop", 7, "7"]));
 
