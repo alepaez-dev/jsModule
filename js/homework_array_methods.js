@@ -44,17 +44,17 @@ const uppercaseString = array => array.map(element => {
 console.log(uppercaseString(["ale","hernandez","paez", 5, "hola", "pop", 7, "7"]));
 
 
-const notDuplicateElements = array => array.filter((element,index,array) => {
-    first_index =  array.indexOf(element);
-    last_index = array.lastIndexOf(element);
+const notDuplicateElements = array => array.filter((element) => {
+    let first_index =  array.indexOf(element);
+    let last_index = array.lastIndexOf(element);
     if(first_index === last_index){
         return element;
     };
 });
 
 const duplicateElements = array => array.filter((element,index,array) => {
-    first_index =  array.indexOf(element);
-    last_index = array.lastIndexOf(element);
+    let first_index =  array.indexOf(element);
+    let last_index = array.lastIndexOf(element);
     if(last_index !== index && first_index === index){
         return element;
     };
