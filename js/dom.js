@@ -8,16 +8,31 @@ let an = document.createElement("a");
 let an2 = document.createElement("a");
 let texto_an = document.createTextNode("item 1");
 let texto_an2 = document.createTextNode("item 2");
+let att = document.createAttribute("href");
+att.value = "#";
+let att2 = document.createAttribute("href");
+att2.value = "#";
 
+an.setAttributeNode(att);
+an2.setAttributeNode(att2);
 an.appendChild(texto_an);
 an2.appendChild(texto_an2);
 li.appendChild(an);
 li2.appendChild(an2);
 ul.appendChild(li);
 ul2.appendChild(li2);
-
 document.getElementById("container").appendChild(ul);
 document.getElementById("container").appendChild(ul2);
+
+//INNERHTML
+let elementUL = "";
+let elementLI = "";
+for (let i = 0; i < 2; i++) {
+  elementLI += `<li><a href="#">anchor ${i}</a></li>`;
+}
+elementUL += `<ul>${elementLI}</ul>`;
+document.getElementById("container_2").innerHTML = elementUL;
+
 // let texto_title = document.createTextNode("soy un titulo");
 // let div = document.createElement("div");
 // let texto_div = document.createTextNode("aqui esta el div creado");
