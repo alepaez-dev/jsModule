@@ -46,13 +46,13 @@ const sortList = () => {
                     break; //rompemos el ciclo
 
                 };
-            }  else if(valor === "descend") {
+            }   else if(valor === "descend") {
                 //comprobar si es mayor o no con lowercase para no tener errores de asci
                     if(charaver.toLowerCase() < charaver_next.toLowerCase()){
                     shouldSwitch = true; //para hacer el cambio a desc
                     break; //rompemos el ciclo
                     };
-            } else {
+            }   else {
                 //dejar como estaba
                 addElements('#container', 10 , koders);
             };
