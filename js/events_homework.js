@@ -13,14 +13,14 @@ const addElements = (selector,numberElements, arrNames) => {
     let listKoders = ''
     arrNames.forEach((koder, index) => {
         if(index < numberElements ) {
-            listKoders += `<li>Koder ${index + 1}: ${koder}</li>`
+            listKoders += `<li>${koder}</li>`
         }
     })
     document.querySelector(selector).innerHTML = listKoders
     return listKoders;
 }
 
-addElements('#container', 10 , koders);
+
 
 const sortList = () => {
     let list, switching, listitems, i, shouldSwitch, valor, charaver;
@@ -35,8 +35,8 @@ const sortList = () => {
             shouldSwitch = false; //no se hace el cambio
 
             //caracters con los que empiece el nombre porque sino siempre comparara la palabra "Koder"
-            charaver = listitems[i].innerHTML.charAt(9);
-            charaver_next = listitems[i+1].innerHTML.charAt(9);
+            charaver = listitems[i].innerHTML.charAt(0);
+            charaver_next = listitems[i+1].innerHTML.charAt(0);
 
             //ver si es ascendiente o descendiente
             if(valor === "ascend") {
