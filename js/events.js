@@ -1,4 +1,13 @@
-const kodersArr = ["Ale", "ale2", "alejandra", "oscar", "ruben", "brian"];
+const kodersArr = [
+  "miguel",
+  "ale3",
+  "ale2",
+  "alejandra",
+  "oscar",
+  "ruben",
+  "brian",
+  "jose",
+];
 
 // Exercise
 const addElements = (selector, numberElements, arrNames) => {
@@ -19,9 +28,10 @@ const addElements = (selector, numberElements, arrNames) => {
 //   addElements("#lista", filtrados.length, filtrados);
 // };
 
-const filterKodersSelectAD = kodersArr => {
+const filterKodersSelectAD = arr => {
   let order = document.getElementById("orden").value;
-  let fakeArr = [...kodersArr];
+  let fakeArr = [...arr];
+  console.log("fakeArr:", fakeArr);
   let orderArray = fakeArr.sort();
   if (order === "a") {
     return orderArray;
@@ -33,18 +43,29 @@ const filterKodersSelectAD = kodersArr => {
 };
 
 const filterKodersSelectAZ = letter => {
-  let filtrados = kodersArr.filter(koder => {
+  console.log("resultadoooooo koders:", kodersArr);
+  let filtrados = resultadoKoders.filter(koder => {
     return koder.toLowerCase().startsWith(letter.toLowerCase());
   });
+  addElements("#container", 10, filtrados);
   return filtrados;
 };
 
+idvalue = "";
 const filterAZ = () => {
-  let valorderad = document.getElementById("orden").value;
-  let valorderaz = document.getElementById("orderletter").value;
-  let resultadoKoders = filterKodersSelectAD(kodersArr);
-  console.log(resultadoKoders);
-  let arrayKoders = filterKodersSelectAZ(valorderaz);
-  console.log(arrayKoders);
-  addElements("#lista", resultadoKoders.length, arrayKoders);
+  //   let valorderad = document.getElementById("orden").value;
+  //   let valorderaz = document.getElementsByClassName("botones").value;
+  //   console.log("idvalue:", idvalue);
+
+  resultadoKoders = filterKodersSelectAD(kodersArr);
+  console.log("idvalue: ", idvalue);
+  console.log("resultadokoders1: ", resultadoKoders);
+  if (idvalue !== "") {
+    arraykod = filterKodersSelectAZ(idvalue);
+    addElements("#container", resultadoKoders.length, arraykod);
+    return;
+  } else {
+    console.log("idvalueaaaaa:", idvalue);
+    addElements("#container", resultadoKoders.length, resultadoKoders);
+  }
 };
