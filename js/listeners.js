@@ -24,3 +24,9 @@ document.getElementById("botones3").addEventListener("click", function () {
   filterAZ();
   console.log("botones 3 listener");
 });
+
+document.getElementById("search").addEventListener("keyup", function () {
+  searchvalue = document.getElementById("search").value;
+  filterSearch(searchvalue);
+  console.log("search listener");
+});

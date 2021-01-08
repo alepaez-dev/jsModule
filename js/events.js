@@ -47,11 +47,22 @@ const filterKodersSelectAZ = letter => {
   let filtrados = resultadoKoders.filter(koder => {
     return koder.toLowerCase().startsWith(letter.toLowerCase());
   });
-  addElements("#container", 10, filtrados);
+  //   addElements("#container", 10, filtrados);
   return filtrados;
 };
 
+const filterSearch = word => {
+  console.log("word: ", word);
+  console.log("si anda entrando al filterSearch");
+  let buscados = resultadoKoders.filter(koder => {
+    return koder === word;
+  });
+  console.log("buscados arreglo", buscados);
+  addElements("#container", buscados.length, buscados);
+};
+
 idvalue = "";
+console.log("id search: ", document.getElementById("search").value);
 const filterAZ = () => {
   //   let valorderad = document.getElementById("orden").value;
   //   let valorderaz = document.getElementsByClassName("botones").value;
