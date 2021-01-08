@@ -1,3 +1,8 @@
+// 1.
+// si el usuario no tiene la cookie sessionuser
+// Redireccionarlo al /login.html
+// si tiene la cookie sessionuser
+// redireccionarlo a /user.html
 console.log("Hola mundo homework");
 
 window.cookie = "sessionuser=false";
