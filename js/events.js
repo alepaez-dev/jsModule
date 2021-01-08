@@ -55,7 +55,7 @@ const filterSearch = word => {
   console.log("word: ", word);
   console.log("si anda entrando al filterSearch");
   let buscados = resultadoKoders.filter(koder => {
-    return koder === word;
+    return koder.toLowerCase().includes(word.toLowerCase());
   });
   console.log("buscados arreglo", buscados);
   addElements("#container", buscados.length, buscados);
