@@ -1,0 +1,13 @@
+#desk{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border: 1px solid red;
+}
+
+#mob {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border: 1px solid red;
+}
