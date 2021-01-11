@@ -7,7 +7,6 @@ const loadUsers = (url, selector) => {
   const request = new XMLHttpRequest();
   let search = location.search;
   let newLocation = search.substr(search.indexOf("=") + 1);
-  console.log("eee", newLocation);
   request.addEventListener("readystatechange", () => {
     if (request.readyState !== 4) {
       return;
@@ -17,24 +16,22 @@ const loadUsers = (url, selector) => {
         console.log(response);
         const objectUsers = JSON.parse(response.responseText);
         let listUsers = "";
-        console.log("listUsers", listUsers);
-        console.log("object:", objectUsers);
-        // objectUsers.forEach(user => {
-        //   listUsers += `<li><a href="user.html?id=${user.id}">${par1}: ${user[par1]} ${par2}: ${user[par2]} ${par3}: ${user[par3]}</a></li>`;
-        // });
-        console.log("list", listUsers);
 
         //recorrer objeto
         Object.keys(objectUsers).forEach(key => {
           if (typeof objectUsers[key] === "object") {
             Object.keys(objectUsers[key]).forEach(llave => {
-              listUsers += `<li>${llave} : ${objectUsers[key][llave]}</li>`;
-              console.log("list", listUsers);
               // console.log(`${llave} : ${objectUsers[key][llave]}`);
+              if (typeof objectUsers[key][llave] === "object") {
+                Object.keys(objectUsers[key][llave]).forEach(llavesita => {
+                  listUsers += `<li>${llavesita} : ${objectUsers[key][llave][llavesita]}</li>`;
+                });
+              } else {
+                listUsers += `<li>${llave} : ${objectUsers[key][llave]}</li>`;
+              }
             });
           } else {
             listUsers += `<li>${key} : ${objectUsers[key]}</li>`;
-            // console.log(`${key} : ${objectUsers[key]}`);
           }
         });
         document.querySelector(selector).innerHTML = listUsers;
