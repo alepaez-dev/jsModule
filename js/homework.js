@@ -15,7 +15,7 @@ const loadUsers = () => {
         console.log("objectUsers", objectUsers);
         let listUsers = "";
         objectUsers.forEach(user => {
-          listUsers += `<li><a href="user.html?id=${user.id}">Name: ${user.name} Email: ${user.email}</a></li>`;
+          listUsers += `<li><a href="user.html?id=${user.id}"><s>name:</s> ${user.name} <s>email</s>: ${user.email}</a></li>`;
         });
         document.querySelector(".list__users").innerHTML = listUsers;
       } else {

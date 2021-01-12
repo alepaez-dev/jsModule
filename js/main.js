@@ -1,5 +1,24 @@
 console.log("Hola mundo");
 
+const recorrerObject = object => {
+  let listUsers = "";
+  Object.keys(object).forEach(key => {
+    if (typeof object[key] === "object") {
+      Object.keys(object[key]).forEach(llave => {
+        if (typeof object[key][llave] === "object") {
+          Object.keys(object[key][llave]).forEach(llavesita => {
+            listUsers += `<li><s>${llavesita}</s> : ${object[key][llave][llavesita]}</li>`;
+          });
+        } else {
+          listUsers += `<li><s>${llave}</s> : ${object[key][llave]}</li>`;
+        }
+      });
+    } else {
+      listUsers += `<li><s>${key}</s> : ${object[key]}</li>`;
+    }
+  });
+  return listUsers;
+};
 // Asynchronous JavaScript And XML
 // JSON
 // XML
@@ -15,26 +34,10 @@ const loadUsers = (url, selector) => {
         const response = request;
         console.log(response);
         const objectUsers = JSON.parse(response.responseText);
-        let listUsers = "";
 
         //recorrer objeto
-        Object.keys(objectUsers).forEach(key => {
-          if (typeof objectUsers[key] === "object") {
-            Object.keys(objectUsers[key]).forEach(llave => {
-              // console.log(`${llave} : ${objectUsers[key][llave]}`);
-              if (typeof objectUsers[key][llave] === "object") {
-                Object.keys(objectUsers[key][llave]).forEach(llavesita => {
-                  listUsers += `<li>${llavesita} : ${objectUsers[key][llave][llavesita]}</li>`;
-                });
-              } else {
-                listUsers += `<li>${llave} : ${objectUsers[key][llave]}</li>`;
-              }
-            });
-          } else {
-            listUsers += `<li>${key} : ${objectUsers[key]}</li>`;
-          }
-        });
-        document.querySelector(selector).innerHTML = listUsers;
+        const newListUsers = recorrerObject(objectUsers);
+        document.querySelector(selector).innerHTML = newListUsers;
       } else {
         console.log("No se pudo ejecutar");
       }
@@ -44,9 +47,10 @@ const loadUsers = (url, selector) => {
   request.send();
 };
 
-document
-  .getElementById("getusers")
-  .addEventListener(
-    "load",
-    loadUsers("https://jsonplaceholder.typicode.com/users", ".list__users")
-  );
+loadUsers("https://jsonplaceholder.typicode.com/users", ".list__users");
+// document
+//   .getElementById("getusers")*
+//   .addEventListener(
+//     "load",
+//     loadUsers("https://jsonplaceholder.typicode.com/users", ".list__users")
+//   );
