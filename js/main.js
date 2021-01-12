@@ -19,6 +19,7 @@ const recorrerObject = object => {
   });
   return listUsers;
 };
+
 // Asynchronous JavaScript And XML
 // JSON
 // XML
@@ -48,9 +49,3 @@ const loadUsers = (url, selector) => {
 };
 
 loadUsers("https://jsonplaceholder.typicode.com/users", ".list__users");
-// document
-//   .getElementById("getusers")*
-//   .addEventListener(
-//     "load",
-//     loadUsers("https://jsonplaceholder.typicode.com/users", ".list__users")
-//   );
