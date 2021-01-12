@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.list_prin {
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.list_prin input {
+  padding: 7px;
+}
+
+.list_prin button {
+  border: none;
+  padding: 10px;
+  color: white;
+  background-color: #5151f3;
+  border-radius: 10px;
+}
+
+.list_prin li {
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+  color: black;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: #b7d0f7;
+}
+
+.list_prin a {
+  color: red;
+  text-decoration: none;
+}
+
+.list_prin #adduserBtn {
+  border: 2px solid black;
+  background-color: #d4c8c8;
+  color: black;
+  padding: 10px;
+  width: 30%;
+  margin: auto;
+}
+/*# sourceMappingURL=style.css.map */

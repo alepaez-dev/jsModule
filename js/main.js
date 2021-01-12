@@ -34,7 +34,7 @@ var showUsers = response => {
     console.log("user", user);
     let dataUsuario = response[user];
     usersList += `
-            <li>${dataUsuario.name} ${dataUsuario.lastname} <a href="user.html?id=${user}">Ver usuario</a></li>
+            <li>${dataUsuario.name} ${dataUsuario.lastname} <a href="user.html?id=${user}">ver usuario</a></li>
         `;
   }
   document.querySelector(".list__users").innerHTML = usersList;
@@ -96,6 +96,10 @@ if (
 ) {
   console.log("entra a la funcion if del newuser.html");
 
+  let idDelete = document.getElementById("idDelete").value;
+  const clickDelete = event => {
+    event.preventDefault();
+  };
   //   Delete;
   requestAjax(
     "https://koders1gpython-default-rtdb.firebaseio.com/alepaez/users/-MQsVf6tYj-7tpdHgube.json",
