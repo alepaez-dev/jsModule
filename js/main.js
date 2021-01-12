@@ -96,16 +96,16 @@ if (
 ) {
   console.log("entra a la funcion if del newuser.html");
 
-  let idDelete = document.getElementById("idDelete").value;
+  //Delete
   const clickDelete = event => {
     event.preventDefault();
+    let idDelete = document.getElementById("idDelete").value;
+    requestAjax(
+      `https://koders1gpython-default-rtdb.firebaseio.com/alepaez/users/${idDelete}.json`,
+      showResponse,
+      "DELETE"
+    );
   };
-  //   Delete;
-  requestAjax(
-    "https://koders1gpython-default-rtdb.firebaseio.com/alepaez/users/-MQsVf6tYj-7tpdHgube.json",
-    showResponse,
-    "DELETE"
-  );
 
   //guardar
   const clickGuardad = event => {
@@ -131,5 +131,8 @@ if (
     );
     console.log("fin");
   };
+
+  //buttons listeners
   document.getElementById("btnSave").addEventListener("click", clickGuardad);
+  document.getElementById("btnDelete").addEventListener("click", clickDelete);
 }
