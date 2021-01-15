@@ -275,4 +275,17 @@ if (btn__send__form) {
   });
 }
 
+const show_users = () => {
+  console.log("entra a update");
+  fetch(
+    `https://koders1gpython-default-rtdb.firebaseio.com/alepaez/users/.json`
+  )
+    .then(response => {
+      return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log("ERROR"));
+  showUsers;
+};
+
 // update user.html
