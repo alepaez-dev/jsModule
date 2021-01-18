@@ -15,7 +15,6 @@ $(document).ready(() => {
   $(".input_place").keyup(() => {
     let input_value = $(".input_place").val().toLowerCase();
     let list_array = $(".list_countries");
-
     list_array.hide();
     showForInput(list_array, input_value);
   });
