@@ -13,25 +13,14 @@ $(document).ready(() => {
       urlPhoto: $("#url_input").val(),
     };
 
-    // console.log("name", dataNewUser.name);
-    // console.log("lastname", dataNewUser.lastname);
-    // console.log("url", dataNewUser.url);
-    // console.log("datanewuser", dataNewUser);
-
-    $.ajax({
-      url:
-        "https://koders1gpython-default-rtdb.firebaseio.com/alepaez/users/.json",
-      method: "POST",
-      data: JSON.stringify(dataNewUser),
-    })
-      .done(function (response) {
-        console.log(response);
-      })
-      .fail(function (err) {
-        console.log(err);
-        console.log(err.status);
-        console.log(err.statusText);
-        console.log("todo mal");
-      });
+    baseAllJquery(
+      "POST",
+      "",
+      dataNewUser,
+      "",
+      `https://koders1gpython-default-rtdb.firebaseio.com/alepaez/users/.json`
+    );
+    console.log("redirect", redirectPage());
+    redirectPage();
   });
 });
