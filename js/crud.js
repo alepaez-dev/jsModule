@@ -3,12 +3,6 @@
 //funcion para get, post, delete, patch
 
 const baseAllJquery = (method, funct, data, path, url) => {
-  console.log("entra a la funcion de baseAllJquery");
-  console.log("metodo: ", method);
-  console.log("data:", data);
-  console.log("path", path);
-  console.log("funct: ", funct);
-  console.log("url:", url);
   if (method === "GET" || method === "DELETE") {
     console.log("entro al if de GET");
     $.ajax({
